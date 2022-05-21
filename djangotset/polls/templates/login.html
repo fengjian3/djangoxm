@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>货物调度管理系统</title>
+{#    <link rel="stylesheet" type="text/css" href="static/css/login_css.css" />#}
+    <style>
+        body {
+            background-image: url("{% static 'img/gk1.jpeg' %}");
+            background-size: 100% 130%;
+        }
+
+        #login_box {
+          width: 20%;
+          height: 350px;
+          background-color: #00000060;
+          margin: auto;
+          margin-top: 10%;
+          text-align: center;
+          border-radius: 10px;
+          padding: 50px 50px;
+        }
+
+        h2 {
+          color: #64c1ec;
+          margin-top: 5%;
+        }
+
+        #input-box {
+          color: #399ed5;
+          margin-top: 5%;
+        }
+
+        span {
+          color: #8aece1;
+        }
+
+        #input_DL {
+          border: 0;
+          width: 60%;
+          font-size: 15px;
+          color: rgb(84, 174, 215);
+          background: transparent;
+          border-bottom: 2px solid rgb(65, 150, 224);
+          padding: 5px 10px;
+          outline: none;
+          margin-top: 10px;
+        }
+
+        #button {
+          margin: auto;
+          margin-top: 30px;
+          width: 50%;
+          height: 30px;
+          border-radius: 10px;
+          border: 0;
+          color: rgb(69, 166, 235);
+          text-align: center;
+          line-height: 30px;
+          font-size: 15px;
+          background-image: linear-gradient(to right, #30cfd0, #330867);
+        }
+
+        #sign_up {
+          margin-top: 45%;
+          margin-left: 60%;
+        }
+
+        a {
+          color: #cd95f5;
+        }
+
+        h3 {
+          color: #64c1ec;
+        }
+        #input_D {
+          color: #39fafa;
+          background: transparent;
+          outline: none;
+          border: #30cfd0;
+        }
+      </style>
+</head>
+
+<body>
+  <div id="login_box">
+    <h2>LOGIN</h2>
+    <h3>欢迎登录货物调度管理系统</h3>
+    <form method="post" action="/login/">
+
+        {% csrf_token %}
+      <div id="input_box">
+        <a>账号</a>
+        <input id="input_DL" type="text" name="user" placeholder="请输入用户名">
+      </div>
+      <div class="input_box">
+        <a>密码</a>
+        <input id="input_DL" type="password" name="pwd" placeholder="请输入密码">
+      </div>
+      <div id="button">
+        <input id="input_D" type="submit" value="登录">
+      </div>
+        <span style="color: darkred">{{ error_meg }}</span>
+    </form>
+  </div>
+</body>
+</html>
